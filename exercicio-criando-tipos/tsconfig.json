@@ -1,5 +1,8 @@
 {
 "compilerOptions": {
-    "outDir": "public/dist"
+    "outDir": "public/dist",
+    "target": "ES2015",
+    "watch": true
+
 }
 }
