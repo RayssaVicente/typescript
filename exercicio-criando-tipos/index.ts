@@ -113,3 +113,44 @@ function firstMenuOption(){
 }
 
 
+function secondMenuOption(){
+    promptValidPlanet(planet => {
+        const situation = promptValidSituation()
+        updateSituation(situation, planet)
+    })
+}
+
+
+function thirdMenuOption(){
+    promptValidPlanet(planet => {
+        const satellite = prompt('Informe o nome do satelite a ser adcionado! ')
+    })
+}
+
+function fourtMenuOption(){
+    promptValidPlanet(planet => {
+        const satellite = prompt('Informe o nome do satelite a ser removido! ')
+    })
+}
+
+function fiftMenuOption(){
+    let list = 'Planetas:\n'
+
+    planets.forEach(planet => {
+        const [a, b, c, d] = planet.coordinates
+
+        list += `
+        Nome: ${planet.name}
+        Coordenadas: (${a}, ${b}, ${c}, ${d})
+        Situação: ${planet.situation}
+        Satelites: ${planet.satellites.length}
+        `
+
+        planet.satellites.forEach(satellite =>{
+            list += `   - ${satellite}\n`
+        })
+        
+    })
+    alert(list)
+}
+
